@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{% load bootstrap3 %}
+{% block content %}
+
+{% for item in drivers %}
+<div class="row">
+    <div class="col-md-4">
+        <div class="thumbnail">
+<h1>{{item.name}}</h1>
+<p>{{item.tel}}</p>
+<p>{{item.permit}}</p>
+<p>{{item.age}}</p>
+</div>
+</div>
+</div>
+{%endfor%}
+{%endblock%}
