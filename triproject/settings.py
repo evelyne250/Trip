@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'tripapp.apps.TripappConfig',
     'bootstrap3',
-    'admin_shortcuts',
+    # 'admin_shortcuts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -42,51 +42,54 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-ADMIN_SHORTCUTS = [
-    {
-        'shortcuts': [
-            {
-                'url': '/',
-                'open_new_window': True,
-            },
-            {
-                'url_name': 'admin:logout',
-            },
-            {
-                'title': 'Users',
-                'url_name': 'admin:auth_user_changelist',
-                'count': 'example.utils.count_users',
-            },
-            {
-                'title': 'Groups',
-                'url_name': 'admin:auth_group_changelist',
-                'count': 'example.utils.count_groups',
-            },
-            {
-                'title': 'Add user',
-                'url_name': 'admin:auth_user_add',
-                'has_perms': 'example.utils.has_perms_to_users',
-            },
-        ]
-    },
-    {
-        'title': 'CMS',
-        'shortcuts': [
+# ADMIN_SHORTCUTS = [
+#     {
+#         'shortcuts': [
+#             {
+#                 'url': '/',
+#                 'open_new_window': True,
+#             },
+#             {
+#                 'url_name': 'admin:logout',
+#             },
+#             {
+#                 'title': 'Users',
+#                 'url_name': 'admin:auth_user_changelist',
+#                 'count': 'example.utils.count_users',
+#             },
+#             {
+#                 'title': 'Groups',
+#                 'url_name': 'admin:auth_group_changelist',
+#                 'count': 'example.utils.count_groups',
+#             },
+#             {
+#                 'title': 'Add user',
+#                 'url_name': 'admin:auth_user_add',
+#                 'has_perms': 'example.utils.has_perms_to_users',
+#             },
+#         ]
+#     },
+#     {
+#         'title': 'CMS',
+#         'shortcuts': [
     
 
-            {
-                'title': 'Orders',
-                'url_name': 'admin:index',
-                'count_new': '12',
-            },
-        ]
-    },
-]
-ADMIN_SHORTCUTS_SETTINGS = {
-    'show_on_all_pages': True,
-    'hide_app_list': True,
-    'open_new_window': False,
-}
+#             {
+#                 'title': 'Orders',
+#                 'url_name': 'admin:index',
+#                 # 'count_new': '12',
+#             },
+#         ]
+#     },
+# ]
+# ADMIN_SHORTCUTS_SETTINGS = {
+#     'show_on_all_pages': True,
+#     'hide_app_list': True,
+#     'open_new_window': False,
+# }
+
+AUTH_USER_MODEL = 'tripapp.Account'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -123,8 +126,10 @@ WSGI_APPLICATION = 'triproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'trip',
+        'USER': 'wecode',
+    'PASSWORD':'ineza',
     }
 }
 
@@ -153,7 +158,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 
