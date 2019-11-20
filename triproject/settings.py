@@ -25,7 +25,7 @@ SECRET_KEY = 'ke(a39bva(n%%sobu!u^(ttebsevrm0bfjzh@*qb)*dv&ah*_*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.0.216', 'localhost', '127.0.0.1', '0.0.0.0']
 
 
 # Application definition
@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'tripapp.apps.TripappConfig',
     'bootstrap3',
+    'rest_framework',
     'admin_shortcuts',
     'django.contrib.admin',
     'django.contrib.auth',

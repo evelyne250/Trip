@@ -6,4 +6,5 @@ class Entries(models.Model):
     tel = models.IntegerField(default=0)
     permit = models.TextField()
     age = models.IntegerField(default=0)
-
+    
+    
