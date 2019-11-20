@@ -33,9 +33,10 @@ ALLOWED_HOSTS = ['192.168.0.216', 'localhost', '127.0.0.1', '0.0.0.0']
 INSTALLED_APPS = [
     'tripapp.apps.TripappConfig',
     'bootstrap3',
+    'jet',
+    'django.contrib.admin',   
     'rest_framework',
     'admin_shortcuts',
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -99,7 +100,24 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+JET_DEFAULT_THEME = 'light-gray'
+JET_SIDE_MENU_COMPACT = True
 
+JET_SIDE_MENU_CUSTOM_APPS = [
+    ('core', [ # Each list element is a tuple with application name (app_label) and list of models
+        'User',
+        'MenuItem',
+        'Block',
+    ]),
+    ('shops', [
+        'Shop',
+        'City',
+        'MetroStation',
+    ]),
+    ('feedback', [
+        'Feedback',
+    ]),
+]
 ROOT_URLCONF = 'triproject.urls'
 
 TEMPLATES = [
