@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['192.168.0.216', 'localhost', '127.0.0.1', '0.0.0.0']
 INSTALLED_APPS = [
     'tripapp.apps.TripappConfig',
     'bootstrap3',
+    'phone_field',
     'jet',
     'django.contrib.admin',   
     'rest_framework',

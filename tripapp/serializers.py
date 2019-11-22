@@ -3,4 +3,4 @@ from .models import *
 class MerchSerializer(serializers.ModelSerializer):
     class Meta:
         model = Entries
-        fields = ('name', 'permit', 'tel','age')
+        fields = ('name', 'permit', 'tel','user_id','platenbr')

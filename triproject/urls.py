@@ -21,5 +21,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'',include('tripapp.urls')),
     url(r'^jet/', include('jet.urls', 'jet')),  
-
+    url(r'jet_api/', include('jet_django.urls')),
 ]
