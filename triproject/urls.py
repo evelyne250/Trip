@@ -19,7 +19,7 @@ from django.contrib.auth import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^jet/', include('jet.urls', 'jet')),
     url(r'',include('tripapp.urls')),
-    url(r'^accounts/', include('registration.backends.simple.urls')),
-    url(r'^logout/$', views.logout, {"next_page": '/'}), 
+    
 ]
