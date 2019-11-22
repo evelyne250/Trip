@@ -1,39 +1,54 @@
+from rest_framework import status
 from django.shortcuts import render
 from pyrebase import pyrebase
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
-from .models import Entries
+from .models import *
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializers import MerchSerializer
+from .serializers import *
 from rest_framework import status
 # Create your views here.
 
-config = {
-  'apiKey': "AIzaSyDHi4Xa5mRRl4Rurv1AwIavg8BBMYEwxaU",
-  'authDomain': "trip-78226.firebaseapp.com",
-  'databaseURL': "https://trip-78226.firebaseio.com",
-  'projectId': "trip-78226",
-  'storageBucket': "trip-78226.appspot.com",
-  'messagingSenderId': "1054259298007",
-  'appId': "1:1054259298007:web:450dceb3a72d1520ac3a92",
-  'measurementId': "G-PCF3CV3GFT"
-}
+# from .models import Clients
+from django.views import View
+from django.views.generic import ListView, DetailView
 
-firebase = pyrebase.initialize_app(config)
-auth = firebase.auth()
-@login_required(login_url='/accounts/login/')
+
+class SnippetListView(ListView):
+    model = Client
+    template_name = 'snippets/snippet_list.html'
+
+
+class SnippetDetailView(DetailView):
+    model = Client
+    template_name = 'snippets/snippet_detail.html'
+class MerchList(APIView):
+    def get(self, request, format=None):
+        all_merch = Client.objects.all()
+        serializers = MerchSerializer(all_merch, many=True)
+        # print(all_merch)
+        return Response(serializers.data)
+
+    def post(self, request, format=None):
+        serializers = MerchSerializer(data=request.data)
+        if serializers.is_valid():
+            serializers.save()
+            return Response(serializers.data, status=status.HTTP_201_CREATED)
+        return Response(serializers.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
 def signIn(request):
     drivers= Entries.objects.all()
     return render(request, "signIn.html",{"drivers": drivers})
 
-class MerchList(APIView):
+class MerchList1(APIView):
     def get(self, request, format=None):
         all_merch = Entries.objects.all()
-        serializers = MerchSerializer(all_merch, many=True)
+        serializers = Merch1Serializer(all_merch, many=True)
         return Response(serializers.data)
     def post(self, request, format=None):
-        serializers = MerchSerializer(data=request.data)
+        serializers = Merch1Serializer(data=request.data)
         if serializers.is_valid():
             serializers.save()
             return Response(serializers.data, status=status.HTTP_201_CREATED)

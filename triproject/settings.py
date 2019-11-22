@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -31,10 +32,12 @@ ALLOWED_HOSTS = ['192.168.0.216', 'localhost', '127.0.0.1', '0.0.0.0']
 # Application definition
 
 INSTALLED_APPS = [
-    'tripapp.apps.TripappConfig',
-    'bootstrap3',
-    'phone_field',
+    
     'jet',
+    'phonenumber_field',
+    'phone_field',
+    'tripapp',
+    'bootstrap3',
     'django.contrib.admin',   
     'rest_framework',
     'admin_shortcuts',
@@ -44,53 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-
-ADMIN_SHORTCUTS = [
-    {
-        'shortcuts': [
-            {
-                'url': '/',
-                'open_new_window': True,
-            },
-            {
-                'url_name': 'admin:logout',
-            },
-            {
-                'title': 'Users',
-                'url_name': 'admin:auth_user_changelist',
-                'count': 'example.utils.count_users',
-            },
-            {
-                'title': 'Groups',
-                'url_name': 'admin:auth_group_changelist',
-                'count': 'example.utils.count_groups',
-            },
-            {
-                'title': 'Add user',
-                'url_name': 'admin:auth_user_add',
-                'has_perms': 'example.utils.has_perms_to_users',
-            },
-        ]
-    },
-    {
-        'title': 'CMS',
-        'shortcuts': [
-    
-
-            {
-                'title': 'Orders',
-                'url_name': 'admin:index',
-                # 'count_new': '12',
-            },
-        ]
-    },
-]
-ADMIN_SHORTCUTS_SETTINGS = {
-    'show_on_all_pages': True,
-    'hide_app_list': True,
-    'open_new_window': False,
-}
-
+# AUTH_USER_MODEL = 'tripapp.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -135,8 +92,9 @@ TEMPLATES = [
             ],
         },
     },
+    
 ]
-
+JET_DEFAULT_THEME = 'light-gray'
 WSGI_APPLICATION = 'triproject.wsgi.application'
 
 
@@ -148,7 +106,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'trip',
         'USER': 'wecode',
-    'PASSWORD':'ineza',
+    'PASSWORD':'Agasaro1',
     }
 }
 
