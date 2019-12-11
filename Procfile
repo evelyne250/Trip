@@ -1,0 +1,1 @@
+web: gunicorn triproject.wsgi --log-file -

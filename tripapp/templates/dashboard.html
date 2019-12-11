@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="author" content="ThemeSelect">
+    <title>Trip</title>
+    <link rel="apple-touch-icon" href="../../static/dash/theme-assets/images/ico/apple-icon-120.png">
+  
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700" rel="stylesheet">
+    <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
+  
+    <link rel="stylesheet" type="text/css" href="../../static/dash/theme-assets/css/vendors.css">
+  
+    <link rel="stylesheet" type="text/css" href="../../static/dash/theme-assets/css/app-lite.css">
+   
+    <link rel="stylesheet" type="text/css" href="../../static/dash/theme-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="../../static/dash/theme-assets/css/core/colors/palette-gradient.css">
+   
+  </head>
+  <body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu" data-color="bg-gradient-x-orange-yellow" data-col="2-columns">
+
+
+
+
+
+    <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true" data-img="theme-assets/images/backgrounds/02.jpg">
+      <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">       
+
+              
+          <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
+        </ul>
+      </div>
+      <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+          <li class=" nav-item"><a href="/"><i class="ft-home"></i><span class="menu-title" data-i18n="">Trip</span></a>
+          </li>
+          <li class=" nav-item"><a href="/dashboard/drivers"><i class="ft-pie-chart"></i><span class="menu-title" data-i18n="">Drivers</span></a>
+          </li>
+         
+         
+          </li>
+          <!-- <li class=" nav-item"><a href="typography.html"><i class="ft-bold"></i><span class="menu-title" data-i18n="">Typography</span></a> -->
+          </li>
+          <li class="active"><a href="/dashboard/clients"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Clients</span></a>
+          </li>
+          {% if user.is_authenticated %}
+                                <li class=" nav-item"><a href="/logout"><i class="ft-home"></i>Logout </a></li>
+                                {% else %}
+                                      
+            <li>
+                    <a class='btn btn-default' href="/accounts/login">Login</a>
+                  </li>
+      
+                  {% endif %}
+
+          </li>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="app-content content">
+      <div class="content-wrapper">
+        <div class="content-wrapper-before"></div>
+        <div class="content-header row">
+          <div class="content-header-left col-md-4 col-12 mb-2">
+            <h3 class="content-header-title">Trip</h3>
+          </div>
+          <div class="content-header-right col-md-8 col-12">
+            <div class="breadcrumbs-top float-md-right">
+             
+            </div>
+          </div>
+        </div>
+        <div class="content-body"><!-- Basic Tables start -->
+<div class="row">
+	<div class="col-12">
+		<div class="card">
+		
+	
+		</div>
+	</div>
+</div>
+<!-- Basic Tables end -->
+<!-- Striped rows start -->
+<div class="row">
+	<div class="col-12">
+		<div class="card">
+	
+		
+
+<!-- Table head options start -->
+<div class="row">
+	<div class="col-12">
+		<div class="card">
+
+			<div class="card-content collapse show">
+				<div class="card-body">
+
+				</div>
+				<div class="table-responsive">
+          <h1 class="text-center">Drivers</h1>
+					<table class="table">
+						<thead class="thead-dark">
+							<tr>
+								
+								<th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Password</th>
+                                <th scope="col">Phone</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								
+                                
+                                        <td id="name"></td></td>
+                                        <td id="age"></td>
+                                        <td id="permit"></td>
+                                        <td id="plate"></td>
+                                        <td id="pass"></td>
+                                        <td id="tel"></td>
+                                 
+                                
+							</tr>
+						
+						</tbody>
+          </table>
+          <h1 class="text-center">Clients</h1>
+          <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  
+                  <th scope="col">First Name</th>
+                                  <th scope="col">Last Name</th>
+                                  <th scope="col">Email</th>
+                                  <th scope="col">Gender</th>
+                                  <th scope="col">Password</th>
+                                  <th scope="col">Phone</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  
+                                  
+                                          <td id="name1"></td></td>
+                                          <td id="age1"></td>
+                                          <td id="permit1"></td>
+                                          <td id="plate1"></td>
+                                          <td id="pass1"></td>
+                                          <td id="tel1"></td>
+                                   
+                                  
+                </tr>
+              
+              </tbody>
+            </table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Table head options end -->
+
+<!-- Bordered table start -->
+<div class="row">
+	<div class="col-12">
+		<div class="card">
+			<div class="card-header">
+				<!-- <h4 class="card-title">Bordered table</h4> -->
+				<a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+				<div class="heading-elements">
+					<!-- <ul class="list-inline mb-0">
+						<li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+						<li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+						<li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+						<li><a data-action="close"><i class="ft-x"></i></a></li>
+					</ul> -->
+				</div>
+			</div>
+		
+        </div>
+      </div>
+    </div>
+
+
+
+  
+
+    <!-- BEGIN VENDOR JS-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+    <script src="../../static/js/driver.js"></script>
+    <script src="../../static/dash/theme-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+
+    <script src="../../static/dash/theme-assets/js/core/app-menu-lite.js" type="text/javascript"></script>
+    <script src="../../static/dash/theme-assets/js/core/app-lite.js" type="text/javascript"></script>
+ 
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Sample CRUD Firebase Javascript - 01 Read Data</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1>
+            Firebase CRUD with Vanilla Javascript
+            <br />
+            <small>
+                <em>01 Read Data</em>
+            </small>
+        </h1>
+        <ul id="userList"></ul>
+        <div id="userDetail">
+            <p>
+                Name :
+                <strong class="detailName"></strong>
+            </p>
+            <p>
+                Age:
+                <strong class="detailAge"></strong>
+            </p>
+            <p>
+                Email:
+                <strong class="detailEmail"></strong>
+            </p>
+        </div>
+        <!-- firebase sdk link goes here -->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDkLYu7BL8l5zB8WEt4ZdPVR6WctJ6vFuk",
+    authDomain: "julia-22db5.firebaseapp.com",
+    databaseURL: "https://julia-22db5.firebaseio.com",
+    projectId: "julia-22db5",
+    storageBucket: "julia-22db5.appspot.com",
+    messagingSenderId: "695724273704",
+    appId: "1:695724273704:web:8fbd255b38f087036dc51d",
+    measurementId: "G-13DM11L8JG"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+        <script type="text/javascript" src="app.js"></script>
+    </body>
+</html>
